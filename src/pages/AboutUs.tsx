@@ -152,12 +152,47 @@ export default function AboutUsPage() {
           <p className="text-xl text-cyan-100 mb-10 leading-relaxed">
             Ready to discuss your project? We're here to bring your vision to life.
           </p>
-          <a
-            href="mailto:contact@northstarsimulations.com"
-            className="inline-flex items-center justify-center bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-50 transition-all hover:scale-105 shadow-lg"
+          <form
+            name="email-capture"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData as any).toString()
+              })
+              .then(() => {
+                alert("Thank you! We'll be in touch soon.");
+                (e.target as HTMLFormElement).reset();
+              })
+              .catch(() => alert("Error submitting form. Please try again."));
+            }}
+            className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto"
           >
-            Get In Touch
-          </a>
+            <input type="hidden" name="form-name" value="email-capture" />
+            <p style={{ display: 'none' }}>
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your Company Email"
+              required
+              className="flex-1 px-6 py-4 rounded-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white shadow-lg"
+              data-testid="input-email-about-cta"
+            />
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-50 transition-all hover:scale-105 shadow-lg whitespace-nowrap"
+              data-testid="button-schedule-about-cta"
+            >
+              Schedule a Free Consultation
+            </button>
+          </form>
         </div>
       </section>
     </div>
