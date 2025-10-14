@@ -171,6 +171,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
             <img 
+              src="/fema-logo.webp" 
+              alt="FEMA" 
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+            />
+            <img 
               src="/nist-logo.png" 
               alt="NIST" 
               className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-50 hover:opacity-100 brightness-150 hover:brightness-100"
@@ -178,11 +183,6 @@ export default function HomePage() {
             <img 
               src="/chariot-logo.jpg" 
               alt="CHARIoT Challenge" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-            />
-            <img 
-              src="/fema-logo.webp" 
-              alt="FEMA" 
               className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
             />
             <img 
