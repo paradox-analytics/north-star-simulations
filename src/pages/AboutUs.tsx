@@ -5,20 +5,28 @@ export default function AboutUsPage() {
     <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/20"></div>
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/about-hero.jpg"
+            alt="North Star Simulations Team"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/70 to-slate-900/80"></div>
         </div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-lg">
               About North Star Simulations
             </h1>
-            <p className="text-xl text-slate-300 leading-relaxed">
+            <p className="text-xl text-slate-200 leading-relaxed drop-shadow-md">
               Building the future of immersive training through innovation, expertise, and custom-tailored solutions.
             </p>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent z-10"></div>
       </section>
 
       {/* Mission & Vision */}
