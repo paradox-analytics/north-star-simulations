@@ -47,6 +47,20 @@ export default function HomePage() {
       image: "/fire-safety-app.jpg",
       imageAlt: "FEMA Fire Safety App",
       imagePosition: "right"
+    },
+    {
+      badge: "VR Aviation Training",
+      title: "Flight Marshal Safety Simulator",
+      description: "Virtual reality training experience that trains flight marshals how to signal and coordinate helicopter landing and takeoff procedures safely and accurately.",
+      features: [
+        "Immersive VR training environment",
+        "Real-time gesture recognition",
+        "Interactive landing simulations",
+        "Safety protocol reinforcement"
+      ],
+      image: "/flight-marshal-sim.jpg",
+      imageAlt: "Flight Marshal Safety Simulator",
+      imagePosition: "left"
     }
   ];
 
