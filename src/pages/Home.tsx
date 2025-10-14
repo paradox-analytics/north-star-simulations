@@ -173,7 +173,7 @@ export default function HomePage() {
             <img 
               src="/nist-logo.png" 
               alt="NIST" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-50 hover:opacity-100 brightness-150 hover:brightness-100"
             />
             <img 
               src="/chariot-logo.jpg" 
@@ -188,7 +188,7 @@ export default function HomePage() {
             <img 
               src="/us-forest-service-logo.avif" 
               alt="U.S. Forest Service" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-50 hover:opacity-100 brightness-150 hover:brightness-100"
             />
           </div>
         </div>
