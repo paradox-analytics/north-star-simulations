@@ -1,5 +1,4 @@
-import { Award, ChevronRight, Building2, Eye, Box, Radio, Lightbulb, Cpu, Layers, Glasses, GraduationCap, Briefcase, Code, Workflow, BarChart3, Zap, Users, Search, PenTool, RefreshCw, Database } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Award, Eye, Box, Radio, Lightbulb, GraduationCap, Briefcase, Code, Workflow, BarChart3, Zap, Users, Search, PenTool, RefreshCw, Database } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -35,16 +34,45 @@ export default function HomePage() {
             <p className="text-xl text-slate-200 leading-relaxed mb-10 drop-shadow-md">
               We design and develop tailored AR, VR, and XR solutions for government agencies, enterprises, and organizations seeking transformative training and simulation technologies.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl">
+            <form
+              name="email-capture"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: new URLSearchParams(formData as any).toString()
+                })
+                .then(() => {
+                  alert("Thank you! We'll be in touch soon.");
+                  (e.target as HTMLFormElement).reset();
+                })
+                .catch(() => alert("Error submitting form. Please try again."));
+              }}
+              className="flex flex-col sm:flex-row gap-4 max-w-2xl"
+            >
+              <input type="hidden" name="form-name" value="email-capture" />
+              <p style={{ display: 'none' }}>
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your Company Email"
+                required
                 className="flex-1 px-6 py-4 rounded-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-lg"
               />
-              <button className="inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-teal-600 transition-all hover:scale-105 shadow-2xl whitespace-nowrap">
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-teal-600 transition-all hover:scale-105 shadow-2xl whitespace-nowrap"
+              >
                 Schedule a Free Consultation
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
@@ -310,16 +338,45 @@ export default function HomePage() {
           <p className="text-xl text-cyan-100 mb-10 leading-relaxed">
             Let's discuss your training challenges and create an immersive experience tailored to your organization's needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+          <form
+            name="email-capture"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData as any).toString()
+              })
+              .then(() => {
+                alert("Thank you! We'll be in touch soon.");
+                (e.target as HTMLFormElement).reset();
+              })
+              .catch(() => alert("Error submitting form. Please try again."));
+            }}
+            className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto"
+          >
+            <input type="hidden" name="form-name" value="email-capture" />
+            <p style={{ display: 'none' }}>
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
             <input
               type="email"
+              name="email"
               placeholder="Enter your Company Email"
+              required
               className="flex-1 px-6 py-4 rounded-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-lg"
             />
-            <button className="inline-flex items-center justify-center bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-50 transition-all hover:scale-105 shadow-lg whitespace-nowrap">
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-50 transition-all hover:scale-105 shadow-lg whitespace-nowrap"
+            >
               Schedule a Free Consultation
             </button>
-          </div>
+          </form>
         </div>
       </section>
     </div>
