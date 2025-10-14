@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, Shield, Flame, Users, AlertTriangle } from 'lucide-react';
+import { CheckCircle, Shield, Flame, Users, AlertTriangle } from 'lucide-react';
 
 export default function EmergencyServices() {
   return (
@@ -221,16 +221,45 @@ export default function EmergencyServices() {
             <p className="text-xl text-red-100 mb-8 leading-relaxed">
               Partner with us to develop cutting-edge VR and AR training solutions that prepare your first responders for the most challenging situations. When lives are on the line, be confident your team is ready.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+            <form
+              name="email-capture"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: new URLSearchParams(formData as any).toString()
+                })
+                .then(() => {
+                  alert("Thank you! We'll be in touch soon.");
+                  (e.target as HTMLFormElement).reset();
+                })
+                .catch(() => alert("Error submitting form. Please try again."));
+              }}
+              className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto"
+            >
+              <input type="hidden" name="form-name" value="email-capture" />
+              <p style={{ display: 'none' }}>
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your Company Email"
+                required
                 className="flex-1 px-6 py-4 rounded-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-400 shadow-lg"
               />
-              <button className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all hover:scale-105 shadow-xl whitespace-nowrap">
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all hover:scale-105 shadow-xl whitespace-nowrap"
+              >
                 Schedule a Free Consultation
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>
