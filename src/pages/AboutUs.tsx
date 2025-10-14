@@ -66,7 +66,7 @@ export default function AboutUsPage() {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Award-Winning Solutions</h3>
               <p className="text-slate-600 leading-relaxed">
-                Recognized with $57K in funding from the CHARIoT Challenge for our innovative incident command simulation platform.
+                Recognized with first place in the NIST CHARIoT Challenge for our innovative incident command simulation platform.
               </p>
             </div>
 
