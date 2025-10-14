@@ -22,7 +22,7 @@ export default function HomePage() {
     },
     {
       badge: "CHARIoT Challenge Winner",
-      title: "NIST Incident Command Simulator",
+      title: "NIST Augmented Reality First Responder Interface",
       description: "An interactive NIMS-compliant simulation platform designed to train and empower Incident Commanders through realistic, story-driven emergency scenarios.",
       features: [
         "Immersive Training Simulation",
@@ -31,7 +31,7 @@ export default function HomePage() {
         "Command Empowerment"
       ],
       image: "/nist-simulation.png",
-      imageAlt: "NIST Incident Command Simulator",
+      imageAlt: "NIST Augmented Reality First Responder Interface",
       imagePosition: "left"
     }
   ];
