@@ -136,9 +136,14 @@ function App() {
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Custom immersive training systems and experiences for government, enterprise, and research organizations.
                 </p>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 mb-4">
                   Based in Tulsa, Oklahoma | Part of Gradient Technology Incubator
                 </p>
+                <img 
+                  src="/gradient-logo.png" 
+                  alt="Gradient Technology Incubator" 
+                  className="h-12 w-auto"
+                />
               </div>
             </div>
 
