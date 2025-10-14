@@ -5,14 +5,18 @@ export default function HomePage() {
     <div>
       {/* Hero Section with Video Background */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center">
-        {/* Video/Image Background Container */}
+        {/* Video Background Container */}
         <div className="absolute inset-0 z-0">
-          {/* Hero Image */}
-          <img
-            src="/vr-training.png"
-            alt="VR Training"
-            className="absolute inset-0 w-full h-full object-cover object-[center_35%]"
-          />
+          {/* Hero Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
 
           {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-900/75 to-slate-900/85"></div>
