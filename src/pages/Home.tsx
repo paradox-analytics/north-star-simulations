@@ -354,7 +354,7 @@ export default function HomePage() {
             </button>
 
             {/* Indicator Dots */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
               {projects.map((_, index) => (
                 <button
                   key={index}
