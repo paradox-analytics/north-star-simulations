@@ -344,7 +344,7 @@ export default function HomePage() {
       </section>
 
       {/* Technology Stack Icons */}
-      <section className="py-12 bg-slate-50 border-y border-slate-200">
+      <section className="py-12 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
             <img 
@@ -355,7 +355,7 @@ export default function HomePage() {
             <img 
               src="/unity-icon.jpg" 
               alt="Unity" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-50 hover:opacity-100 brightness-150 hover:brightness-100"
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
             />
             <img 
               src="/tensorflow-icon.png" 
@@ -365,7 +365,7 @@ export default function HomePage() {
             <img 
               src="/magic-leap-icon.png" 
               alt="Magic Leap" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-50 hover:opacity-100 brightness-150 hover:brightness-100"
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
             />
           </div>
         </div>
