@@ -347,26 +347,34 @@ export default function HomePage() {
       <section className="py-12 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-            <img 
-              src="/unreal-engine-icon.jpg" 
-              alt="Unreal Engine" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-            />
-            <img 
-              src="/unity-icon.jpg" 
-              alt="Unity" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-            />
-            <img 
-              src="/tensorflow-icon.png" 
-              alt="TensorFlow" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-            />
-            <img 
-              src="/magic-leap-icon.png" 
-              alt="Magic Leap" 
-              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-            />
+            <div className="h-16 md:h-20 w-32 md:w-40 flex items-center justify-center">
+              <img 
+                src="/unreal-engine-icon.jpg" 
+                alt="Unreal Engine" 
+                className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+              />
+            </div>
+            <div className="h-16 md:h-20 w-32 md:w-40 flex items-center justify-center">
+              <img 
+                src="/unity-icon.jpg" 
+                alt="Unity" 
+                className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+              />
+            </div>
+            <div className="h-16 md:h-20 w-32 md:w-40 flex items-center justify-center">
+              <img 
+                src="/tensorflow-icon.png" 
+                alt="TensorFlow" 
+                className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+              />
+            </div>
+            <div className="h-16 md:h-20 w-32 md:w-40 flex items-center justify-center">
+              <img 
+                src="/magic-leap-icon.png" 
+                alt="Magic Leap" 
+                className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+              />
+            </div>
           </div>
         </div>
       </section>
