@@ -161,16 +161,45 @@ export default function Navigation() {
             >
               About Us
             </Link>
-            <div className="flex items-center space-x-2">
+            <form
+              name="email-capture"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: new URLSearchParams(formData as any).toString()
+                })
+                .then(() => {
+                  alert("Thank you! We'll be in touch soon.");
+                  (e.target as HTMLFormElement).reset();
+                })
+                .catch(() => alert("Error submitting form. Please try again."));
+              }}
+              className="flex items-center space-x-2"
+            >
+              <input type="hidden" name="form-name" value="email-capture" />
+              <p style={{ display: 'none' }}>
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your Email"
+                required
                 className="px-4 py-2 rounded-lg border border-slate-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 text-sm w-48"
               />
-              <button className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-lg hover:from-cyan-600 hover:to-teal-600 transition-all whitespace-nowrap text-sm font-medium">
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-lg hover:from-cyan-600 hover:to-teal-600 transition-all whitespace-nowrap text-sm font-medium"
+              >
                 Schedule Consultation
               </button>
-            </div>
+            </form>
           </div>
 
           <button
@@ -232,16 +261,46 @@ export default function Navigation() {
             >
               About Us
             </Link>
-            <div className="mt-4 space-y-2">
+            <form
+              name="email-capture"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: new URLSearchParams(formData as any).toString()
+                })
+                .then(() => {
+                  alert("Thank you! We'll be in touch soon.");
+                  (e.target as HTMLFormElement).reset();
+                  setIsOpen(false);
+                })
+                .catch(() => alert("Error submitting form. Please try again."));
+              }}
+              className="mt-4 space-y-2"
+            >
+              <input type="hidden" name="form-name" value="email-capture" />
+              <p style={{ display: 'none' }}>
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your Email"
+                required
                 className="w-full px-4 py-2 rounded-lg border border-slate-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
-              <button className="w-full text-center bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-lg font-medium">
+              <button
+                type="submit"
+                className="w-full text-center bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-lg font-medium"
+              >
                 Schedule Consultation
               </button>
-            </div>
+            </form>
           </div>
         )}
       </div>
