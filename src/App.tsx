@@ -131,7 +131,7 @@ function App() {
             <div className="grid md:grid-cols-4 gap-8 mb-8">
               <div className="md:col-span-2">
                 <div className="flex items-center space-x-2 mb-4">
-                  <img src="/north-star-logo copy copy.png" alt="North Star Simulations" className="h-[100px]" />
+                  <img src="/north-star-logo.png" alt="North Star Simulations" className="h-[100px]" />
                 </div>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Custom immersive training systems and experiences for government, enterprise, and research organizations.

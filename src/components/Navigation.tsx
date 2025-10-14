@@ -28,7 +28,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/north-star-logo copy copy.png" alt="North Star Simulations" className="h-20" />
+            <img src="/north-star-logo.png" alt="North Star Simulations" className="h-20" />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
