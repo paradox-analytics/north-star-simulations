@@ -166,6 +166,29 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent z-10"></div>
       </section>
 
+      {/* Partner Logos Banner */}
+      <section className="py-12 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+            <img 
+              src="/chariot-logo.jpg" 
+              alt="CHARIoT Challenge" 
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+            />
+            <img 
+              src="/fema-logo.webp" 
+              alt="FEMA" 
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+            />
+            <img 
+              src="/us-forest-service-logo.avif" 
+              alt="U.S. Forest Service" 
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
