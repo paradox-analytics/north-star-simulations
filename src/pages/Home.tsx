@@ -1,6 +1,60 @@
-import { Award, Eye, Box, Radio, Lightbulb, GraduationCap, Briefcase, Code, Workflow, BarChart3, Zap, Users, Search, PenTool, RefreshCw, Database } from 'lucide-react';
+import { Award, Eye, Box, Radio, Lightbulb, GraduationCap, Briefcase, Code, Workflow, BarChart3, Zap, Users, Search, PenTool, RefreshCw, Database, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function HomePage() {
+  const [currentProject, setCurrentProject] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const projects = [
+    {
+      badge: "Award-Winning Innovation",
+      title: "Incident Command Simulation Platform",
+      description: "A comprehensive immersive training solution for fire safety emergency response teams, featuring dynamic 3D environments, realistic high-risk scenarios, and FEMA NIMS compliance.",
+      features: [
+        "Immersive Storytelling",
+        "Realistic Interactions",
+        "Unique Incident Experiences",
+        "Dynamic 3D Environments"
+      ],
+      image: "/fire-safety-sim-optimized.gif",
+      imageAlt: "Incident Command Simulation Platform - Fire Safety Training",
+      imagePosition: "right"
+    },
+    {
+      badge: "NIMS-Compliant Training",
+      title: "Immersive Training Simulation",
+      description: "An interactive NIMS-compliant simulation platform designed to train and empower Incident Commanders through realistic, story-driven emergency scenarios.",
+      features: [
+        "Immersive Training Simulation",
+        "NIMS & FEMA Standards",
+        "Story-Driven Scenarios",
+        "Command Empowerment"
+      ],
+      image: "/nist-simulation.png",
+      imageAlt: "NIST Immersive Training Simulation",
+      imagePosition: "left"
+    }
+  ];
+
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentProject((prev) => (prev + 1) % projects.length);
+      }, 8000);
+      return () => clearInterval(interval);
+    }
+  }, [isPaused, projects.length]);
+
+  const nextProject = () => {
+    setCurrentProject((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
+  const project = projects[currentProject];
+
   return (
     <div>
       {/* Hero Section with Video Background */}
@@ -233,7 +287,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Project */}
+      {/* Featured Projects Carousel */}
       <section id="projects" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -245,43 +299,69 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="grid md:grid-cols-2">
-              <div className="p-12 text-white">
-                <div className="inline-flex items-center space-x-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full px-4 py-2 mb-6">
-                  <Award className="w-4 h-4 text-cyan-400" />
-                  <span className="text-sm font-medium">Award-Winning Innovation</span>
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+              <div className={`grid md:grid-cols-2 ${project.imagePosition === 'left' ? 'md:grid-flow-dense' : ''}`}>
+                <div className={`p-12 text-white ${project.imagePosition === 'left' ? 'md:col-start-2' : ''}`}>
+                  <div className="inline-flex items-center space-x-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full px-4 py-2 mb-6">
+                    <Award className="w-4 h-4 text-cyan-400" />
+                    <span className="text-sm font-medium">{project.badge}</span>
+                  </div>
+                  <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
+                  <p className="text-slate-300 mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="space-y-3">
+                    {project.features.map((feature, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                        <span className="text-slate-200">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-3xl font-bold mb-4">Incident Command Simulation Platform</h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  A comprehensive immersive training solution for fire safety emergency response teams, featuring dynamic 3D environments, realistic high-risk scenarios, and FEMA NIMS compliance.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-slate-200">Immersive Storytelling</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-slate-200">Realistic Interactions</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-slate-200">Unique Incident Experiences</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-slate-200">Dynamic 3D Environments</span>
-                  </div>
+                <div className={`bg-gradient-to-br from-cyan-500/10 to-teal-500/10 p-12 flex items-center justify-center ${project.imagePosition === 'left' ? 'md:col-start-1' : ''}`}>
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    className="max-w-md w-full rounded-lg shadow-lg"
+                  />
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 p-12 flex items-center justify-center">
-                <img
-                  src="/fire-safety-sim-optimized.gif"
-                  alt="Incident Command Simulation Platform - Fire Safety Training"
-                  className="max-w-md w-full rounded-lg shadow-lg"
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevProject}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-900 p-3 rounded-full shadow-lg transition-all hover:scale-110"
+              aria-label="Previous project"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={nextProject}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-900 p-3 rounded-full shadow-lg transition-all hover:scale-110"
+              aria-label="Next project"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Indicator Dots */}
+            <div className="flex justify-center gap-2 mt-6">
+              {projects.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentProject(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    currentProject === index ? 'bg-cyan-600 w-8' : 'bg-slate-300'
+                  }`}
+                  aria-label={`Go to project ${index + 1}`}
                 />
-              </div>
+              ))}
             </div>
           </div>
         </div>
