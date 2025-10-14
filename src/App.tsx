@@ -142,7 +142,7 @@ function App() {
                 <img 
                   src="/gradient-logo.png" 
                   alt="Gradient Technology Incubator" 
-                  className="h-12 w-auto"
+                  className="h-16 w-auto"
                 />
               </div>
             </div>
