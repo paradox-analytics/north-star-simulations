@@ -33,6 +33,20 @@ export default function HomePage() {
       image: "/nist-simulation.png",
       imageAlt: "NIST Augmented Reality First Responder Interface",
       imagePosition: "left"
+    },
+    {
+      badge: "AI-Powered Fire Safety",
+      title: "FEMA Fire Safety App",
+      description: "Helped homeowners identify wildfire threats and mitigation steps using machine learning and computer vision technology for object detection and classification.",
+      features: [
+        "Automated wildfire risk detection",
+        "Computer vision AR mapping",
+        "Real-time hazard analytics",
+        "Predictive mitigation modeling"
+      ],
+      image: "/fire-safety-app.jpg",
+      imageAlt: "FEMA Fire Safety App",
+      imagePosition: "right"
     }
   ];
 
