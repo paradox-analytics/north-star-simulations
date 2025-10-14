@@ -21,8 +21,8 @@ export default function HomePage() {
       imagePosition: "right"
     },
     {
-      badge: "NIMS-Compliant Training",
-      title: "Immersive Training Simulation",
+      badge: "CHARIoT Challenge Winner",
+      title: "NIST Incident Command Simulator",
       description: "An interactive NIMS-compliant simulation platform designed to train and empower Incident Commanders through realistic, story-driven emergency scenarios.",
       features: [
         "Immersive Training Simulation",
@@ -31,7 +31,7 @@ export default function HomePage() {
         "Command Empowerment"
       ],
       image: "/nist-simulation.png",
-      imageAlt: "NIST Immersive Training Simulation",
+      imageAlt: "NIST Incident Command Simulator",
       imagePosition: "left"
     }
   ];
@@ -304,10 +304,13 @@ export default function HomePage() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden shadow-2xl">
-              <div className={`grid md:grid-cols-2 ${project.imagePosition === 'left' ? 'md:grid-flow-dense' : ''}`}>
-                <div className={`p-12 text-white ${project.imagePosition === 'left' ? 'md:col-start-2' : ''}`}>
-                  <div className="inline-flex items-center space-x-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full px-4 py-2 mb-6">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden shadow-2xl min-h-[500px] md:min-h-[600px]">
+              <div 
+                key={currentProject}
+                className={`grid md:grid-cols-2 ${project.imagePosition === 'left' ? 'md:grid-flow-dense' : ''} animate-fade-in`}
+              >
+                <div className={`p-12 text-white flex flex-col justify-center ${project.imagePosition === 'left' ? 'md:col-start-2' : ''}`}>
+                  <div className="inline-flex items-center space-x-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full px-4 py-2 mb-6 w-fit">
                     <Award className="w-4 h-4 text-cyan-400" />
                     <span className="text-sm font-medium">{project.badge}</span>
                   </div>
@@ -328,7 +331,7 @@ export default function HomePage() {
                   <img
                     src={project.image}
                     alt={project.imageAlt}
-                    className="max-w-md w-full rounded-lg shadow-lg"
+                    className="max-w-md w-full rounded-lg shadow-lg object-contain"
                   />
                 </div>
               </div>
