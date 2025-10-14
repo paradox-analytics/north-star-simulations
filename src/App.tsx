@@ -111,23 +111,6 @@ function UseCasesPage() {
   );
 }
 
-function SolutionPlaceholder({ title }: { title: string }) {
-  return (
-    <div className="min-h-screen bg-slate-50 py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-5xl font-bold mb-8">{title}</h1>
-        <p className="text-xl text-slate-600 mb-8">
-          Detailed content for this solution is being developed. This page will feature comprehensive information about our training solutions for this sector.
-        </p>
-        <Link to="/use-cases" className="inline-flex items-center text-cyan-600 font-semibold hover:text-cyan-700">
-          <ChevronRight className="w-5 h-5 mr-1 rotate-180" />
-          Back to All Solutions
-        </Link>
-      </div>
-    </div>
-  );
-}
-
 function App() {
   return (
     <Router>
